@@ -1,0 +1,7 @@
+site_name: Road to DevSecOps
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+
