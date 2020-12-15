@@ -1,6 +1,8 @@
 site_name: Road to DevSecOps
-site_url: /site
+docs_dir: catatan
 theme:
   name: material
 nav:
   - Home: index.md
+  - Linux is Fun:
+      - Logrotate: linux-fun/logrotate.md

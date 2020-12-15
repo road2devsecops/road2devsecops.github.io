@@ -9,19 +9,19 @@
       
       
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
     
     
       
-        <title>Road to DevSecOps</title>
+        <title>Logrotate - Road to DevSecOps</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.19753c6b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.19753c6b.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.196e0c26.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
         
       
     
@@ -57,7 +57,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-my-journey-to-devsecops" class="md-skip">
+        <a href="#manajemen-log-menggunakan-logrotate" class="md-skip">
           Skip to content
         </a>
       
@@ -70,7 +70,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="." title="Road to DevSecOps" class="md-header-nav__button md-logo" aria-label="Road to DevSecOps">
+    <a href="../.." title="Road to DevSecOps" class="md-header-nav__button md-logo" aria-label="Road to DevSecOps">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -87,7 +87,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Home
+              Logrotate
             
           </span>
         </div>
@@ -144,7 +144,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Road to DevSecOps" class="md-nav__button md-logo" aria-label="Road to DevSecOps">
+    <a href="../.." title="Road to DevSecOps" class="md-nav__button md-logo" aria-label="Road to DevSecOps">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -159,20 +159,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="." class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
       Home
     </a>
-    
   </li>
 
     
@@ -180,10 +171,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     <label class="md-nav__link" for="nav-2">
       Linux is Fun
       <span class="md-nav__icon md-icon"></span>
@@ -200,11 +193,70 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="linux-fun/logrotate/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Logrotate
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Logrotate
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apa-itu-logrotate" class="md-nav__link">
+    Apa itu logrotate?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bagaimana-logrotate-bekerja" class="md-nav__link">
+    Bagaimana Logrotate Bekerja?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installasi" class="md-nav__link">
+    Installasi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konfigurasi" class="md-nav__link">
+    Konfigurasi
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -230,6 +282,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apa-itu-logrotate" class="md-nav__link">
+    Apa itu logrotate?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bagaimana-logrotate-bekerja" class="md-nav__link">
+    Bagaimana Logrotate Bekerja?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installasi" class="md-nav__link">
+    Installasi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konfigurasi" class="md-nav__link">
+    Konfigurasi
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -241,7 +329,65 @@
               
                 
                 
-                <h1 id="welcome-to-my-journey-to-devsecops">Welcome to my Journey to DevSecOps</h1>
+                <h1 id="manajemen-log-menggunakan-logrotate">Manajemen Log Menggunakan Logrotate</h1>
+<p><img alt="" src="../images/log.png" /></p>
+<h2 id="apa-itu-logrotate">Apa itu logrotate?</h2>
+<p>Menurut manual page dari logrotate <code>man logrotate</code>, Logrotate adalah sebuah program yang berfungsi untuk mengotomatissai proses rotasi, kompresi, dan penghapusan log file. Logrotate menghandle (rotate, compress, delete) file log secara satuan waktu (daily, weekly, monthly), atau ukuran besar log. </p>
+<h2 id="bagaimana-logrotate-bekerja">Bagaimana Logrotate Bekerja?</h2>
+<p>Logrotate bekerja dengan memanfaatkan file konfigurasi yang bisa kita kustomisasi <code>/etc/logrotate.conf</code>. Dalam file konfigurasi kita bisa mengatur berapa lama kita menyimpan log tersebut sebelum log tersebut akan otomatis terhapus. Selain itu kita bisa mengatus agar file log yang ada dirotasi berdasarkan satuan waktu (daily, weekly, monthly).</p>
+<p><code>Contoh :</code> log file yang dirotate setiap hari selama 7 hari.</p>
+<pre><code># ls /var/log
+syslog  syslog.1  syslog.2.gz  syslog.3.gz syslog.4.gz syslog.5.gz syslog.6.gz
+</code></pre>
+<p>Log akan dirotate, kemudian di-compress dan setelah 7 hari maka log akan otomatis dihapus.</p>
+<h2 id="installasi">Installasi</h2>
+<p>Kebanyakan distribusi linux sudah terinstall logrotate secara default. Tapi jika di sistem linux kalian belum terinstall, logrotate bisa diinstall dengan perintah :</p>
+<p><strong>RHEL/CentOS</strong></p>
+<pre><code>sudo yum -y install logrotate
+</code></pre>
+<p><strong>Debian/Ubuntu</strong></p>
+<pre><code>sudo apt -y install logrotate
+</code></pre>
+<p><strong>Fedora</strong></p>
+<pre><code>sudo dnf install logrotate
+</code></pre>
+<h2 id="konfigurasi">Konfigurasi</h2>
+<p>Contoh file konfigurasi logrotate untuk log <code>httpd access.log &amp; error.log</code>.</p>
+<pre><code>compress
+
+&quot;/var/log/httpd/access.log&quot; /var/log/httpd/error.log {
+    rotate 5
+    mail recipient@example.org
+    size 100k
+    sharedscripts
+    postrotate
+        /usr/bin/killall -HUP httpd
+    endscript
+}
+</code></pre>
+<p><strong>Penjelasan</strong></p>
+<pre><code>compress
+</code></pre>
+<p>Baris pertama merupakan global options. Di contoh ini, log akan dicompress setelah log tersebut dirotasi.</p>
+<pre><code>&quot;/var/log/httpd/access.log&quot; /var/log/httpd/error.log
+</code></pre>
+<p>Baris berikutnya mendefine parameter untuk log httpd <code>access.log</code> dan <code>error.log</code>.</p>
+<pre><code>rotate 5
+</code></pre>
+<p>Log akan dirotasi maksimal 5 kali, setelah itu log akan dihapus.</p>
+<pre><code>mail recipient@example.org
+</code></pre>
+<p>Log yang melebihi 5 kali rotasi akan dikirim ke email <code>recipient@example.org</code>.</p>
+<pre><code>size 100k
+</code></pre>
+<p>Log akan dirotasi setelah besar file 100k.</p>
+<pre><code>sharedscripts
+postrotate
+    /usr/bin/killall -HUP httpd
+endscript
+</code></pre>
+<p><code>sharedscripts</code> berarti <code>postrotate</code> script akan dijalankan sekali setelah log lama di-compress.</p>
+<p>Untuk lebih detailnya kalian bisa cek manual page dari logrotate dengan perintah: <code>man logrotate</code></p>
                 
               
               
@@ -260,20 +406,20 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-        
-          <a href="linux-fun/logrotate/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../.." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
-                  Next
+                  Previous
                 </span>
-                Logrotate
+                Home
               </div>
             </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
           </a>
+        
         
       </nav>
     </div>
@@ -294,15 +440,15 @@
       
     </div>
     
-      <script src="assets/javascripts/vendor.0ac82a11.min.js"></script>
-      <script src="assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: ".",
+          base: "../..",
           features: [],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
