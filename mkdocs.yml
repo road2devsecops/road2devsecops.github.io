@@ -1,4 +1,5 @@
 site_name: Road to DevSecOps
+site_url: /site
 theme:
   name: material
 nav:
