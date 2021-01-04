@@ -6,3 +6,6 @@ nav:
   - Home: index.md
   - Linux is Fun:
       - Logrotate: linux-fun/logrotate.md
+  - Containers:
+      - Containers Security:
+          - Insecure Docker Registry: containers/containers-sec/insecure-docker-registry.md
