@@ -405,12 +405,12 @@
 
 <h1 id="scaning-vulnerability-dengan-trivy-pada-github-action">Scaning Vulnerability dengan Trivy pada Github Action</h1>
 <h2 id="docker-image">Docker Image</h2>
-<p>Image pada container dibangun berdasarkan serangkaian layer. Layer ini mewakili instruksi pada Dockerfile. </p>
-<pre><code>FROM ubuntu:18.04
-COPY . /app
-RUN make /app
-CMD python /app/app.py
-</code></pre>
+<p>Image pada container dibangun berdasarkan serangkaian layer. Layer ini mewakili instruksi pada Dockerfile. 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>FROM ubuntu:18.04
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>COPY . /app
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>RUN make /app
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>CMD python /app/app.py
+</code></pre></div></p>
 <p>Dockerfile diatas tersusun dari 3 layer image</p>
 <h2 id="container-and-image">Container and Image</h2>
 <h2 id="apa-itu-trivy">Apa itu trivy</h2>

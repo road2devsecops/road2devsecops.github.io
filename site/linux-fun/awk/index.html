@@ -287,53 +287,47 @@
     Contoh penggunaan awk
   </a>
   
-    <nav class="md-nav" aria-label="Contoh penggunaan awk">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#versi-awk" class="md-nav__link">
     Versi awk
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#ekstraksi-kolom" class="md-nav__link">
     Ekstraksi kolom
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#ekstrak-construct" class="md-nav__link">
     Ekstrak &amp; Construct
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#mencari-string" class="md-nav__link">
     Mencari string
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#automasi-konfigurasi-hostame-dari-file-csv" class="md-nav__link">
     Automasi Konfigurasi Hostame dari file csv
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#optimasi-script" class="md-nav__link">
     Optimasi script
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -478,53 +472,47 @@
     Contoh penggunaan awk
   </a>
   
-    <nav class="md-nav" aria-label="Contoh penggunaan awk">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#versi-awk" class="md-nav__link">
     Versi awk
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#ekstraksi-kolom" class="md-nav__link">
     Ekstraksi kolom
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#ekstrak-construct" class="md-nav__link">
     Ekstrak &amp; Construct
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#mencari-string" class="md-nav__link">
     Mencari string
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#automasi-konfigurasi-hostame-dari-file-csv" class="md-nav__link">
     Automasi Konfigurasi Hostame dari file csv
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#optimasi-script" class="md-nav__link">
     Optimasi script
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -546,178 +534,238 @@
 <h2 id="apa-itu-awk">Apa itu AWK</h2>
 <p>AWK atau GAWK (GNU awk) merupakan tools text processing yang sangat powerfull. Selain untuk text processing gawk juga dapat dimanfaatkan untuk mempermudah kita untuk melakukan automasi, config dan lain sebagainya.</p>
 <h2 id="bekerja-menggunakan-awk">Bekerja menggunakan AWK</h2>
-<p>Sebelum memulai menggunakan awk, adabaiknya kita membaca dokumentasinya terlebih dahulu. Untuk melihat dokumentasi atau man page dari awk menggunakan perintah sebagai berikut :</p>
-<pre><code>man awk
-</code></pre>
+<p>Sebelum memulai menggunakan awk, adabaiknya kita membaca dokumentasinya terlebih dahulu. Untuk melihat dokumentasi atau man page dari awk menggunakan perintah sebagai berikut :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>man awk
+</code></pre></div></p>
 <h2 id="contoh-penggunaan-awk">Contoh penggunaan awk</h2>
 <p>Ada 2 file yang digunakan untuk contoh
-a.txt</p>
-<pre><code>ID  Nama    Gender  Age     Hobby
-1   Udin    Male    22      Mancing
-2   Samsul  Male    13      Berenang
-3   Vina    Female  23      Memasak
-4   Sri     Female  15      Olahraga
-</code></pre>
-<p>b.csv</p>
-<pre><code>ID,Nama,Gender,Age,Hobby
-1,Udin,Male,22,Mancing
-2,Samsul,Male,13,Berenang
-3,Vina,Female,23,Memasak
-4,Sri,Female,15,Olahraga
-</code></pre>
-<h3 id="versi-awk">Versi awk</h3>
-<p><code>Command :</code></p>
-<pre><code>awk --version
-</code></pre>
-<p><code>Output :</code></p>
-<pre><code>GNU Awk 4.1.4, API: 1.1 (GNU MPFR 4.0.1, GNU MP 6.1.2)
-Copyright (C) 1989, 1991-2016 Free Software Foundation.
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see http://www.gnu.org/licenses/.
-</code></pre>
-<h3 id="ekstraksi-kolom">Ekstraksi kolom</h3>
+a.txt
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ID  Nama    Gender  Age     Hobby
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>1   Udin    Male    22      Mancing
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>2   Samsul  Male    13      Berenang
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>3   Vina    Female  23      Memasak
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>4   Sri     Female  15      Olahraga
+</code></pre></div></p>
+<p>b.csv
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ID,Nama,Gender,Age,Hobby
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>1,Udin,Male,22,Mancing
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>2,Samsul,Male,13,Berenang
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>3,Vina,Female,23,Memasak
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>4,Sri,Female,15,Olahraga
+</code></pre></div></p>
+<h2 id="versi-awk">Versi awk</h2>
+<p><code>Command :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>awk --version
+</code></pre></div>
+<code>Output :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>GNU Awk 4.1.4, API: 1.1 (GNU MPFR 4.0.1, GNU MP 6.1.2)
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Copyright (C) 1989, 1991-2016 Free Software Foundation.
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>This program is free software; you can redistribute it and/or modify
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>it under the terms of the GNU General Public License as published by
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>the Free Software Foundation; either version 3 of the License, or
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>(at your option) any later version.
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>This program is distributed in the hope that it will be useful,
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>but WITHOUT ANY WARRANTY; without even the implied warranty of
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>GNU General Public License for more details.
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>You should have received a copy of the GNU General Public License
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>along with this program. If not, see http://www.gnu.org/licenses/.
+</code></pre></div></p>
+<h2 id="ekstraksi-kolom">Ekstraksi kolom</h2>
 <p>Perintah berikut digunakan untuk melakukan ekstraksi kolom pertama dari file dengan delimiter default (whitespace/spasi/tab) <code>a.txt</code><br />
-<code>Command :</code></p>
-<pre><code>awk '{print $1}' a.txt
-</code></pre>
-<p><code>Output :</code></p>
-<pre><code>ID
-1
-2
-3
-4
-</code></pre>
-<p><strong>Penjelasan</strong> :<br />
-|<code>awk</code>|<code>'{print $1}'</code>|<code>a.txt</code>|
-|-|-|-|
-|awk command|print kolom pertama|nama file|</p>
+<code>Command :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>awk <span class="s1">&#39;{print $1}&#39;</span> a.txt
+</code></pre></div>
+<code>Output :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ID
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>1
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>2
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>3
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>4
+</code></pre></div>
+<strong>Penjelasan</strong> :  </p>
+<table>
+<thead>
+<tr>
+<th><code>awk</code></th>
+<th><code>'{print $1}'</code></th>
+<th><code>a.txt</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>awk command</td>
+<td>print kolom pertama</td>
+<td>nama file</td>
+</tr>
+</tbody>
+</table>
 <p>Berikut contoh ekstrasi kolom menggunakan delimiter koma pada file <code>b.csv</code><br />
-<code>Command :</code></p>
-<pre><code>awk -F ',' '{print $2}' b.csv
-</code></pre>
-<p><code>Output :</code></p>
-<pre><code>Nama
-Udin
-Samsul
-Vina
-Sri
-</code></pre>
-<p><strong>Penjelasan</strong> :<br />
-|<code>awk</code>|<code>-F</code>|<code>','</code>|<code>'{print $2}'</code>|<code>a.txt</code>|
-|-|-|-|-|-|
-|awk command|menentukan delimiter|delimiter|print kolom kedua|nama file|</p>
-<h3 id="ekstrak-construct">Ekstrak &amp; Construct</h3>
+<code>Command :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>awk -F <span class="s1">&#39;,&#39;</span> <span class="s1">&#39;{print $2}&#39;</span> b.csv
+</code></pre></div>
+<code>Output :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Nama
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Udin
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Samsul
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Vina
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>Sri
+</code></pre></div>
+<strong>Penjelasan</strong> :  </p>
+<table>
+<thead>
+<tr>
+<th><code>awk</code></th>
+<th><code>-F</code></th>
+<th><code>','</code></th>
+<th><code>'{print $2}'</code></th>
+<th><code>a.txt</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>awk command</td>
+<td>menentukan delimiter</td>
+<td>delimiter</td>
+<td>print kolom kedua</td>
+<td>nama file</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ekstrak-construct">Ekstrak &amp; Construct</h2>
 <p>Seelah belajar cara melakukan ekstraksi kolom, kita juga dapat memodifikasi output yang kita inginkan, sebagai contoh :<br />
-<code>Command :</code></p>
-<pre><code>awk -F ',' '{print &quot;Hallo &quot;$2&quot; hobby saya &quot;$5}' b.csv
-</code></pre>
-<p><code>Output :</code></p>
-<pre><code>Hallo Nama hobby saya Hobby
-Hallo Udin hobby saya Mancing
-Hallo Samsul hobby saya Berenang
-Hallo Vina hobby saya Memasak
-Hallo Sri hobby saya Olahraga
-</code></pre>
-<p><strong>Penjelasan</strong> :<br />
-|<code>'{print</code>|<code>"Hallo "</code>|<code>$2</code>|<code>" hobby saya "</code>|<code>$5}'</code>|
-|-|-|-|-|-|
-|print|string tambahan|kolom ke-2|string tambahan|kolom ke-5|</p>
-<h3 id="mencari-string">Mencari string</h3>
-<p><code>Command :</code></p>
-<pre><code>awk '/Samsul/' a.txt
-</code></pre>
-<p><code>Output :</code></p>
-<pre><code>2   Samsul  Male    13      Berenang
-</code></pre>
-<p><strong>Penjelasan</strong><br />
-|<code>awk</code>|<code>'/Samsul/'</code>|<code>a.txt</code>|
-|-|-|-|
-|awk|String yang dicari|Nama file|</p>
-<h3 id="automasi-konfigurasi-hostame-dari-file-csv">Automasi Konfigurasi Hostame dari file csv</h3>
-<p>Task kali ini kita ditugaskan untuk setting hostname di beberapa server yang akan digunakan untuk deployment aplikasi, kita diberikan satu file <code>server.csv</code> yang berisi informasi server. Untuk format hostnamenya adalah sebagai berikut :  </p>
-<pre><code>Region-Type-Host
-ex : JKT-HPE-DL380-worker
-</code></pre>
-<p>File csv :  </p>
-<pre><code>IP,Type,Host,Region
-192.168.30.12,HPE-DL380,controller,JKT
-192.168.30.14,HPE-DL380,worker,JKT
-192.168.30.15,HPE-DL380,worker,BGR
-192.168.30.16,HPE-DL380,worker,BGD
-</code></pre>
+<code>Command :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>awk -F <span class="s1">&#39;,&#39;</span> <span class="s1">&#39;{print &quot;Hallo &quot;$2&quot; hobby saya &quot;$5}&#39;</span> b.csv
+</code></pre></div>
+<code>Output :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Hallo Nama hobby saya Hobby
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Hallo Udin hobby saya Mancing
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Hallo Samsul hobby saya Berenang
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Hallo Vina hobby saya Memasak
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Hallo Sri hobby saya Olahraga
+</code></pre></div>
+<strong>Penjelasan</strong> :  </p>
+<table>
+<thead>
+<tr>
+<th><code>'{print</code></th>
+<th><code>"Hallo "</code></th>
+<th><code>$2</code></th>
+<th><code>" hobby saya "</code></th>
+<th><code>$5}'</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>print</td>
+<td>string tambahan</td>
+<td>kolom ke-2</td>
+<td>string tambahan</td>
+<td>kolom ke-5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mencari-string">Mencari string</h2>
+<p><code>Command :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>awk <span class="s1">&#39;/Samsul/&#39;</span> a.txt
+</code></pre></div>
+<code>Output :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>2   Samsul  Male    13      Berenang
+</code></pre></div>
+<strong>Penjelasan</strong>  </p>
+<table>
+<thead>
+<tr>
+<th><code>awk</code></th>
+<th><code>'/Samsul/'</code></th>
+<th><code>a.txt</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>awk</td>
+<td>String yang dicari</td>
+<td>Nama file</td>
+</tr>
+</tbody>
+</table>
+<h2 id="automasi-konfigurasi-hostame-dari-file-csv">Automasi Konfigurasi Hostame dari file csv</h2>
+<p>Task kali ini kita ditugaskan untuk setting hostname di beberapa server yang akan digunakan untuk deployment aplikasi, kita diberikan satu file <code>server.csv</code> yang berisi informasi server. Untuk format hostnamenya adalah sebagai berikut :<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Region-Type-Host
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>ex : JKT-HPE-DL380-worker
+</code></pre></div></p>
+<p>File csv :<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>IP,Type,Host,Region
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>192.168.30.12,HPE-DL380,controller,JKT
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>192.168.30.14,HPE-DL380,worker,JKT
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>192.168.30.15,HPE-DL380,worker,BGR
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>192.168.30.16,HPE-DL380,worker,BGD
+</code></pre></div></p>
 <p>Pertama kita coba generate hostname dan IP terlebih dahulu.<br />
-<code>Command :</code></p>
-<pre><code>awk -F ',' '{print $1&quot; &quot;$4&quot;-&quot;$2&quot;-&quot;$3}' server.csv
-</code></pre>
-<p><code>Output :</code></p>
-<pre><code>IP Region-Type-Host
-192.168.30.12 JKT-HPE-DL380-controller
-192.168.30.14 JKT-HPE-DL380-worker
-192.168.30.15 BGR-HPE-DL380-worker
-192.168.30.16 BGD-HPE-DL380-worker
-</code></pre>
+<code>Command :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>awk -F <span class="s1">&#39;,&#39;</span> <span class="s1">&#39;{print $1&quot; &quot;$4&quot;-&quot;$2&quot;-&quot;$3}&#39;</span> server.csv
+</code></pre></div>
+<code>Output :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>IP Region-Type-Host
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>192.168.30.12 JKT-HPE-DL380-controller
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>192.168.30.14 JKT-HPE-DL380-worker
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>192.168.30.15 BGR-HPE-DL380-worker
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>192.168.30.16 BGD-HPE-DL380-worker
+</code></pre></div></p>
 <p>Untuk konfigurasi <code>/etc/hosts</code> kita harus menghilangkan header <code>IP Region-Type-Host</code>. Kita bisa memanfaatkan fitur search string untuk mengeliminasi string tersebut.</p>
-<p><code>Command :</code></p>
-<pre><code>awk -F ',' '/192/{print $1&quot; &quot;$4&quot;-&quot;$2&quot;-&quot;$3}' server.csv
-</code></pre>
-<p><code>Output :</code></p>
-<pre><code>192.168.30.12 JKT-HPE-DL380-controller
-192.168.30.14 JKT-HPE-DL380-worker
-192.168.30.15 BGR-HPE-DL380-worker
-192.168.30.16 BGD-HPE-DL380-worker
-</code></pre>
+<p><code>Command :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>awk -F <span class="s1">&#39;,&#39;</span> <span class="s1">&#39;/192/{print $1&quot; &quot;$4&quot;-&quot;$2&quot;-&quot;$3}&#39;</span> server.csv
+</code></pre></div>
+<code>Output :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>192.168.30.12 JKT-HPE-DL380-controller
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>192.168.30.14 JKT-HPE-DL380-worker
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>192.168.30.15 BGR-HPE-DL380-worker
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>192.168.30.16 BGD-HPE-DL380-worker
+</code></pre></div></p>
 <p>Sekarang untuk menandakan konfigurasi ini digereate oleh awk kita dapat memanfaatkan statmen <code>BEGIN</code>.<br />
-<code>Command :</code></p>
-<pre><code>awk -F ',' 'BEGIN{print &quot;#Generated by awk&quot;}/192/{print $1&quot; &quot;$4&quot;-&quot;$2&quot;-&quot;$3}' server.csv
-</code></pre>
-<p><code>Output :</code></p>
-<pre><code>#Generated by awk
-192.168.30.12 JKT-HPE-DL380-controller
-192.168.30.14 JKT-HPE-DL380-worker
-192.168.30.15 BGR-HPE-DL380-worker
-192.168.30.16 BGD-HPE-DL380-worker
-</code></pre>
+<code>Command :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>awk -F <span class="s1">&#39;,&#39;</span> <span class="s1">&#39;BEGIN{print &quot;#Generated by awk&quot;}/192/{print $1&quot; &quot;$4&quot;-&quot;$2&quot;-&quot;$3}&#39;</span> server.csv
+</code></pre></div>
+<code>Output :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>#Generated by awk
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>192.168.30.12 JKT-HPE-DL380-controller
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>192.168.30.14 JKT-HPE-DL380-worker
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>192.168.30.15 BGR-HPE-DL380-worker
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>192.168.30.16 BGD-HPE-DL380-worker
+</code></pre></div></p>
 <p>Sekarang kita aplikasikan konfigurasi tersebut ke file <code>/etc/hosts</code> ke server.
-Buat file hostname.sh</p>
-<pre><code>vim hostname.sh
-</code></pre>
-<p>Masukan script berikut untuk generate dan apply config ke server.</p>
-<pre><code>#!/bin/bash
-## Generate config
-FILE=server.csv
-awk -F ',' 'BEGIN{print &quot;#Generated by awk&quot;}/192/{print $1&quot; &quot;$4&quot;-&quot;$2&quot;-&quot;$3}' $FILE &gt; config
-
-## Apply config using ssh
-for i in $(awk -F ',' '/192/{print $1}' $FILE);
-  do 
-    echo &quot;Configuring $i&quot;;
-    echo &quot;cat config | ssh root@$i 'cat &gt;&gt; /etc/hosts'&quot;;
-done
-</code></pre>
-<p>Ubah permission untuk eksekusi</p>
-<pre><code>chmod 760 hostname.sh
-</code></pre>
-<p>Eksekusi script</p>
-<pre><code>./hostname.sh
-</code></pre>
-<p><code>Output :</code></p>
-<pre><code>Configuring 192.168.30.12
-Configuring 192.168.30.14
-Configuring 192.168.30.15
-Configuring 192.168.30.16
-</code></pre>
-<h3 id="optimasi-script">Optimasi script</h3>
+Buat file hostname.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>vim hostname.sh
+</code></pre></div>
+Masukan script berikut untuk generate dan apply config ke server.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="c1">## Generate config</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nv">FILE</span><span class="o">=</span>server.csv
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>awk -F <span class="s1">&#39;,&#39;</span> <span class="s1">&#39;BEGIN{print &quot;#Generated by awk&quot;}/192/{print $1&quot; &quot;$4&quot;-&quot;$2&quot;-&quot;$3}&#39;</span> <span class="nv">$FILE</span> &gt; config
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="c1">## Apply config using ssh</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="k">for</span> i <span class="k">in</span> <span class="k">$(</span>awk -F <span class="s1">&#39;,&#39;</span> <span class="s1">&#39;/192/{print $1}&#39;</span> <span class="nv">$FILE</span><span class="k">)</span><span class="p">;</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>  <span class="k">do</span> 
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>    <span class="nb">echo</span> <span class="s2">&quot;Configuring </span><span class="nv">$i</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>    <span class="nb">echo</span> <span class="s2">&quot;cat config | ssh root@</span><span class="nv">$i</span><span class="s2"> &#39;cat &gt;&gt; /etc/hosts&#39;&quot;</span><span class="p">;</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="k">done</span>
+</code></pre></div></p>
+<p>Ubah permission untuk eksekusi
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>chmod <span class="m">760</span> hostname.sh
+</code></pre></div></p>
+<p>Eksekusi script
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>./hostname.sh
+</code></pre></div>
+<code>Output :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Configuring 192.168.30.12
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>Configuring 192.168.30.14
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>Configuring 192.168.30.15
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>Configuring 192.168.30.16
+</code></pre></div></p>
+<h2 id="optimasi-script">Optimasi script</h2>
 <ol>
 <li>Ubah variable <code>$FILE</code> menjadi argument agar eksekusi script menjadi <code>./hostname.sh nama-file.csv</code></li>
 </ol>

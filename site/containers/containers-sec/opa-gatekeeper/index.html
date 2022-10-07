@@ -405,157 +405,157 @@
 </ul>
 <p><img alt="" src="../images/kubernetes-admission-flow.png" /></p>
 <p>Install gatekeeper</p>
-<pre><code>kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.4/deploy/gatekeeper.yaml
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.4/deploy/gatekeeper.yaml
+</code></pre></div>
 <p><strong>Gatekeeper</strong> menggunakan <code>OPA Constraint framework</code> untuk mendefinisikan policy.</p>
 <h3 id="constraint">Constraint</h3>
 <p>Constraint merupakan suatu difinisi agar suatu sistem memenuhi requirement dari author.</p>
-<p>ex.</p>
-<pre><code>apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: FooSystemRequiredLabel
-metadata:
-  name: require-billing-label
-spec:
-  match:
-    namespace: [&quot;expensive&quot;]
-  parameters:
-    labels: [&quot;billing&quot;]
-</code></pre>
-<p>ketika constraint tersebut dideklarasikan, maka setiap resources yang ada pada namespace <code>expensive</code> diharuskan mempunyai label <code>billing</code>.</p>
+<p>ex.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>apiVersion: constraints.gatekeeper.sh/v1beta1
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>kind: FooSystemRequiredLabel
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>metadata:
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  name: require-billing-label
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>spec:
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  match:
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    namespace: [&quot;expensive&quot;]
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  parameters:
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    labels: [&quot;billing&quot;]
+</code></pre></div>
+ketika constraint tersebut dideklarasikan, maka setiap resources yang ada pada namespace <code>expensive</code> diharuskan mempunyai label <code>billing</code>.</p>
 <h3 id="constraint-template">Constraint Template</h3>
 <p>Constraint template merupakan template yang nantinya digunakan oleh <code>constraint</code> untuk mendefinisikan policy.</p>
-<p>ex.</p>
-<pre><code>apiVersion: templates.gatekeeper.sh/v1beta1
-kind: ConstraintTemplate
-metadata:
-  name: k8srequiredlabels
-spec:
-  crd:
-    spec:
-      names:
-        kind: K8sRequiredLabels
-      validation:
-        # Schema for the `parameters` field
-        openAPIV3Schema:
-          properties:
-            labels:
-              type: array
-              items: string
-  targets:
-    - target: admission.k8s.gatekeeper.sh
-      rego: |
-        package k8srequiredlabels
-
-        violation[{&quot;msg&quot;: msg, &quot;details&quot;: {&quot;missing_labels&quot;: missing}}] {
-          provided := {label | input.review.object.metadata.labels[label]}
-          required := {label | label := input.parameters.labels[_]}
-          missing := required - provided
-          count(missing) &gt; 0
-          msg := sprintf(&quot;you must provide labels: %v&quot;, [missing])
-        }
-</code></pre>
+<p>ex.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>apiVersion: templates.gatekeeper.sh/v1beta1
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>kind: ConstraintTemplate
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>metadata:
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  name: k8srequiredlabels
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>spec:
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  crd:
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    spec:
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>      names:
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        kind: K8sRequiredLabels
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>      validation:
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        # Schema for the `parameters` field
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        openAPIV3Schema:
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>          properties:
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>            labels:
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>              type: array
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>              items: string
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>  targets:
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    - target: admission.k8s.gatekeeper.sh
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>      rego: |
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>        package k8srequiredlabels
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        violation[{&quot;msg&quot;: msg, &quot;details&quot;: {&quot;missing_labels&quot;: missing}}] {
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>          provided := {label | input.review.object.metadata.labels[label]}
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>          required := {label | label := input.parameters.labels[_]}
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>          missing := required - provided
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>          count(missing) &gt; 0
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>          msg := sprintf(&quot;you must provide labels: %v&quot;, [missing])
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>        }
+</code></pre></div></p>
 <p><code>Constraint template</code> diatas merupakan definisi template yang digunakan oleh <code>constraint</code> sebelumnya, yang mengharuskan resource yang ada di suatu namespace mempunyai spesifik label.</p>
 <p>Demo :
-1. Create ConstraintTemplate.</p>
-<pre><code>vim ct-req-labels.yaml
-...
-apiVersion: templates.gatekeeper.sh/v1beta1
-kind: ConstraintTemplate
-metadata:
-  name: k8srequiredlabels
-spec:
-  crd:
-    spec:
-      names:
-        kind: K8sRequiredLabels
-      validation:
-        # Schema for the `parameters` field
-        openAPIV3Schema:
-          properties:
-            labels:
-              type: array
-              items: string
-  targets:
-    - target: admission.k8s.gatekeeper.sh
-      rego: |
-        package k8srequiredlabels
-
-        violation[{&quot;msg&quot;: msg, &quot;details&quot;: {&quot;missing_labels&quot;: missing}}] {
-          provided := {label | input.review.object.metadata.labels[label]}
-          required := {label | label := input.parameters.labels[_]}
-          missing := required - provided
-          count(missing) &gt; 0
-          msg := sprintf(&quot;you must provide labels: %v&quot;, [missing])
-        }
-...
-</code></pre>
-<p>Apply definition</p>
-<pre><code>kubectl apply -f ct-req-labels.yaml
-</code></pre>
+1. Create ConstraintTemplate.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>vim ct-req-labels.yaml
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>...
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>apiVersion: templates.gatekeeper.sh/v1beta1
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>kind: ConstraintTemplate
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>metadata:
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  name: k8srequiredlabels
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>spec:
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  crd:
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    spec:
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>      names:
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        kind: K8sRequiredLabels
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>      validation:
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        # Schema for the `parameters` field
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        openAPIV3Schema:
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>          properties:
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>            labels:
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>              type: array
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>              items: string
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>  targets:
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    - target: admission.k8s.gatekeeper.sh
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>      rego: |
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>        package k8srequiredlabels
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>        violation[{&quot;msg&quot;: msg, &quot;details&quot;: {&quot;missing_labels&quot;: missing}}] {
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>          provided := {label | input.review.object.metadata.labels[label]}
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>          required := {label | label := input.parameters.labels[_]}
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>          missing := required - provided
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>          count(missing) &gt; 0
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>          msg := sprintf(&quot;you must provide labels: %v&quot;, [missing])
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>        }
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>...
+</code></pre></div></p>
+<p>Apply definition
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl apply -f ct-req-labels.yaml
+</code></pre></div></p>
 <ol>
-<li>Create Constraint.</li>
+<li>Create Constraint.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>vim c-req-label.yaml
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>...
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>apiVersion: constraints.gatekeeper.sh/v1beta1
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>kind: K8sRequiredLabels
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>metadata:
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  name: ns-must-have-gk
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>spec:
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>  match:
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    kinds:
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>      - apiGroups: [&quot;&quot;]
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        kinds: [&quot;Namespace&quot;]
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>  parameters:
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    labels: [&quot;name: gatekeeper&quot;]
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>...
+</code></pre></div></li>
 </ol>
-<pre><code>vim c-req-label.yaml
-...
-apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: K8sRequiredLabels
-metadata:
-  name: ns-must-have-gk
-spec:
-  match:
-    kinds:
-      - apiGroups: [&quot;&quot;]
-        kinds: [&quot;Namespace&quot;]
-  parameters:
-    labels: [&quot;name: gatekeeper&quot;]
-...
-</code></pre>
-<p>Apply definition</p>
-<pre><code>kubectl apply -f c-req-label.yaml
-</code></pre>
+<p>Apply definition
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>kubectl apply -f c-req-label.yaml
+</code></pre></div></p>
 <p>Constraint diatas akan membatasi pada saat kita membuat namespace. namespace yang dibuat harus mempunyai label <code>gatekeeper</code></p>
-<pre><code># kubectl create ns ci-cd
-...
-Error from server ([ns-must-have-gk] you must provide labels: {&quot;gatekeeper&quot;}): admission webhook &quot;validation.gatekeeper.sh&quot; denied the request: [ns-must-have-gk] you must provide labels: {&quot;gatekeeper&quot;}
-...
-</code></pre>
-<pre><code>apiVersion: templates.gatekeeper.sh/v1beta1
-kind: ConstraintTemplate
-metadata:
-  name: privilegedcontainer
-spec:
-  crd:
-    spec:
-      names:
-        kind: PrivilegedContainer
-  targets:
-    - target: admission.k8s.gatekeeper.sh
-      rego: |
-        package privilegedcontainer
-
-        violation[{&quot;msg&quot;: msg, &quot;details&quot;: {}}]{
-            c := input_containers[_]
-            c.securityContext.privileged
-            msg := sprintf(&quot;Privileged container is not allowed: %v, securityContext: %v, [c.name, c.securityContext]&quot;)
-        }
-        input_containers[c]{
-            c := input.review.object.spec.containers[_]
-        }
-        input_containers[c]{
-            c := input.review.object.spec.initContainers[_]
-        }
-</code></pre>
-<pre><code>apiVersion: constraint.gatekeeper.sh/v1beta1
-kind: PrivilegedContainer
-metadata:
-  name: privilegedcontainer
-spec:
-  match:
-    kinds:
-      - apiGroups: [&quot;&quot;]
-        apiVersion: [&quot;v1&quot;]
-        kinds: [&quot;Pod&quot;]
-</code></pre>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># kubectl create ns ci-cd
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>...
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Error from server ([ns-must-have-gk] you must provide labels: {&quot;gatekeeper&quot;}): admission webhook &quot;validation.gatekeeper.sh&quot; denied the request: [ns-must-have-gk] you must provide labels: {&quot;gatekeeper&quot;}
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>...
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>apiVersion: templates.gatekeeper.sh/v1beta1
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>kind: ConstraintTemplate
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>metadata:
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>  name: privilegedcontainer
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>spec:
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  crd:
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    spec:
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>      names:
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        kind: PrivilegedContainer
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  targets:
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    - target: admission.k8s.gatekeeper.sh
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>      rego: |
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>        package privilegedcontainer
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>        violation[{&quot;msg&quot;: msg, &quot;details&quot;: {}}]{
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>            c := input_containers[_]
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>            c.securityContext.privileged
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>            msg := sprintf(&quot;Privileged container is not allowed: %v, securityContext: %v, [c.name, c.securityContext]&quot;)
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>        }
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>        input_containers[c]{
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>            c := input.review.object.spec.containers[_]
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>        }
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>        input_containers[c]{
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>            c := input.review.object.spec.initContainers[_]
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>        }
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>apiVersion: constraint.gatekeeper.sh/v1beta1
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>kind: PrivilegedContainer
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>metadata:
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  name: privilegedcontainer
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>spec:
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  match:
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    kinds:
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>      - apiGroups: [&quot;&quot;]
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        apiVersion: [&quot;v1&quot;]
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>        kinds: [&quot;Pod&quot;]
+</code></pre></div>
 
               
             </article>

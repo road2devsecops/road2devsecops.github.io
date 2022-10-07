@@ -466,58 +466,58 @@
 <p>Menurut manual page dari logrotate <code>man logrotate</code>, Logrotate adalah sebuah program yang berfungsi untuk mengotomatissai proses rotasi, kompresi, dan penghapusan log file. Logrotate menghandle (rotate, compress, delete) file log secara satuan waktu (daily, weekly, monthly), atau ukuran besar log. </p>
 <h2 id="bagaimana-logrotate-bekerja">Bagaimana Logrotate Bekerja?</h2>
 <p>Logrotate bekerja dengan memanfaatkan file konfigurasi yang bisa kita kustomisasi <code>/etc/logrotate.conf</code>. Dalam file konfigurasi kita bisa mengatur berapa lama kita menyimpan log tersebut sebelum log tersebut akan otomatis terhapus. Selain itu kita bisa mengatus agar file log yang ada dirotasi berdasarkan satuan waktu (daily, weekly, monthly).</p>
-<p><code>Contoh :</code> log file yang dirotate setiap hari selama 7 hari.</p>
-<pre><code># ls /var/log
-syslog  syslog.1  syslog.2.gz  syslog.3.gz syslog.4.gz syslog.5.gz syslog.6.gz
-</code></pre>
+<p><code>Contoh :</code> log file yang dirotate setiap hari selama 7 hari.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># ls /var/log
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>syslog  syslog.1  syslog.2.gz  syslog.3.gz syslog.4.gz syslog.5.gz syslog.6.gz
+</code></pre></div></p>
 <p>Log akan dirotate, kemudian di-compress dan setelah 7 hari maka log akan otomatis dihapus.</p>
 <h2 id="installasi">Installasi</h2>
 <p>Kebanyakan distribusi linux sudah terinstall logrotate secara default. Tapi jika di sistem linux kalian belum terinstall, logrotate bisa diinstall dengan perintah :</p>
-<p><strong>RHEL/CentOS</strong></p>
-<pre><code>sudo yum -y install logrotate
-</code></pre>
-<p><strong>Debian/Ubuntu</strong></p>
-<pre><code>sudo apt -y install logrotate
-</code></pre>
-<p><strong>Fedora</strong></p>
-<pre><code>sudo dnf install logrotate
-</code></pre>
+<p><strong>RHEL/CentOS</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo yum -y install logrotate
+</code></pre></div></p>
+<p><strong>Debian/Ubuntu</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo apt -y install logrotate
+</code></pre></div></p>
+<p><strong>Fedora</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo dnf install logrotate
+</code></pre></div></p>
 <h2 id="konfigurasi">Konfigurasi</h2>
 <p>Contoh file konfigurasi logrotate untuk log <code>httpd access.log &amp; error.log</code>.</p>
-<pre><code>compress
-
-&quot;/var/log/httpd/access.log&quot; /var/log/httpd/error.log {
-    rotate 5
-    mail recipient@example.org
-    size 100k
-    sharedscripts
-    postrotate
-        /usr/bin/killall -HUP httpd
-    endscript
-}
-</code></pre>
-<p><strong>Penjelasan</strong></p>
-<pre><code>compress
-</code></pre>
-<p>Baris pertama merupakan global options. Di contoh ini, log akan dicompress setelah log tersebut dirotasi.</p>
-<pre><code>&quot;/var/log/httpd/access.log&quot; /var/log/httpd/error.log
-</code></pre>
-<p>Baris berikutnya mendefine parameter untuk log httpd <code>access.log</code> dan <code>error.log</code>.</p>
-<pre><code>rotate 5
-</code></pre>
-<p>Log akan dirotasi maksimal 5 kali, setelah itu log akan dihapus.</p>
-<pre><code>mail recipient@example.org
-</code></pre>
-<p>Log yang melebihi 5 kali rotasi akan dikirim ke email <code>recipient@example.org</code>.</p>
-<pre><code>size 100k
-</code></pre>
-<p>Log akan dirotasi setelah besar file 100k.</p>
-<pre><code>sharedscripts
-postrotate
-    /usr/bin/killall -HUP httpd
-endscript
-</code></pre>
-<p><code>sharedscripts</code> berarti <code>postrotate</code> script akan dijalankan sekali setelah log lama di-compress.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>compress
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>&quot;/var/log/httpd/access.log&quot; /var/log/httpd/error.log {
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    rotate 5
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    mail recipient@example.org
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    size 100k
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    sharedscripts
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    postrotate
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        /usr/bin/killall -HUP httpd
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    endscript
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>}
+</code></pre></div>
+<strong>Penjelasan</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>compress
+</code></pre></div>
+Baris pertama merupakan global options. Di contoh ini, log akan dicompress setelah log tersebut dirotasi.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&quot;/var/log/httpd/access.log&quot; /var/log/httpd/error.log
+</code></pre></div>
+Baris berikutnya mendefine parameter untuk log httpd <code>access.log</code> dan <code>error.log</code>.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>rotate 5
+</code></pre></div>
+Log akan dirotasi maksimal 5 kali, setelah itu log akan dihapus.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mail recipient@example.org
+</code></pre></div>
+Log yang melebihi 5 kali rotasi akan dikirim ke email <code>recipient@example.org</code>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>size 100k
+</code></pre></div>
+Log akan dirotasi setelah besar file 100k.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sharedscripts
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>postrotate
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    /usr/bin/killall -HUP httpd
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>endscript
+</code></pre></div>
+<code>sharedscripts</code> berarti <code>postrotate</code> script akan dijalankan sekali setelah log lama di-compress.</p>
 <p>Untuk lebih detailnya kalian bisa cek manual page dari logrotate dengan perintah: <code>man logrotate</code></p>
 
               

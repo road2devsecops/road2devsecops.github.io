@@ -1,5 +1,12 @@
 site_name: Road to DevSecOps
 docs_dir: catatan
+markdown_extensions:
+  - tables
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 theme:
   name: material
 nav:
