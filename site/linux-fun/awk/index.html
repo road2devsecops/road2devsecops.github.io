@@ -13,7 +13,7 @@
     
     
       
-        <title>Logrotate - Road to DevSecOps</title>
+        <title>Basic Bash Scripting - AWK - Road to DevSecOps</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#manajemen-log-menggunakan-logrotate" class="md-skip">
+        <a href="#basic-bash-scripting-menggunakan-awk" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Logrotate
+              Basic Bash Scripting - AWK
             
           </span>
         </div>
@@ -219,6 +219,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../logrotate/" class="md-nav__link">
+        Logrotate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -231,12 +245,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Logrotate
+          Basic Bash Scripting - AWK
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Logrotate
+        Basic Bash Scripting - AWK
       </a>
       
         
@@ -255,30 +269,71 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#apa-itu-logrotate" class="md-nav__link">
-    Apa itu logrotate?
+  <a href="#apa-itu-awk" class="md-nav__link">
+    Apa itu AWK
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bagaimana-logrotate-bekerja" class="md-nav__link">
-    Bagaimana Logrotate Bekerja?
+  <a href="#bekerja-menggunakan-awk" class="md-nav__link">
+    Bekerja menggunakan AWK
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installasi" class="md-nav__link">
-    Installasi
+  <a href="#contoh-penggunaan-awk" class="md-nav__link">
+    Contoh penggunaan awk
+  </a>
+  
+    <nav class="md-nav" aria-label="Contoh penggunaan awk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versi-awk" class="md-nav__link">
+    Versi awk
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#konfigurasi" class="md-nav__link">
-    Konfigurasi
+        
+          <li class="md-nav__item">
+  <a href="#ekstraksi-kolom" class="md-nav__link">
+    Ekstraksi kolom
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ekstrak-construct" class="md-nav__link">
+    Ekstrak &amp; Construct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mencari-string" class="md-nav__link">
+    Mencari string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automasi-konfigurasi-hostame-dari-file-csv" class="md-nav__link">
+    Automasi Konfigurasi Hostame dari file csv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimasi-script" class="md-nav__link">
+    Optimasi script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -286,20 +341,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../awk/" class="md-nav__link">
-        Basic Bash Scripting - AWK
-      </a>
     </li>
   
 
@@ -419,30 +460,71 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#apa-itu-logrotate" class="md-nav__link">
-    Apa itu logrotate?
+  <a href="#apa-itu-awk" class="md-nav__link">
+    Apa itu AWK
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bagaimana-logrotate-bekerja" class="md-nav__link">
-    Bagaimana Logrotate Bekerja?
+  <a href="#bekerja-menggunakan-awk" class="md-nav__link">
+    Bekerja menggunakan AWK
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installasi" class="md-nav__link">
-    Installasi
+  <a href="#contoh-penggunaan-awk" class="md-nav__link">
+    Contoh penggunaan awk
+  </a>
+  
+    <nav class="md-nav" aria-label="Contoh penggunaan awk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versi-awk" class="md-nav__link">
+    Versi awk
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#konfigurasi" class="md-nav__link">
-    Konfigurasi
+        
+          <li class="md-nav__item">
+  <a href="#ekstraksi-kolom" class="md-nav__link">
+    Ekstraksi kolom
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ekstrak-construct" class="md-nav__link">
+    Ekstrak &amp; Construct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mencari-string" class="md-nav__link">
+    Mencari string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automasi-konfigurasi-hostame-dari-file-csv" class="md-nav__link">
+    Automasi Konfigurasi Hostame dari file csv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimasi-script" class="md-nav__link">
+    Optimasi script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -460,65 +542,185 @@
                 
 
 
-<h1 id="manajemen-log-menggunakan-logrotate">Manajemen Log Menggunakan Logrotate</h1>
-<p><img alt="" src="../images/log.png" /></p>
-<h2 id="apa-itu-logrotate">Apa itu logrotate?</h2>
-<p>Menurut manual page dari logrotate <code>man logrotate</code>, Logrotate adalah sebuah program yang berfungsi untuk mengotomatissai proses rotasi, kompresi, dan penghapusan log file. Logrotate menghandle (rotate, compress, delete) file log secara satuan waktu (daily, weekly, monthly), atau ukuran besar log. </p>
-<h2 id="bagaimana-logrotate-bekerja">Bagaimana Logrotate Bekerja?</h2>
-<p>Logrotate bekerja dengan memanfaatkan file konfigurasi yang bisa kita kustomisasi <code>/etc/logrotate.conf</code>. Dalam file konfigurasi kita bisa mengatur berapa lama kita menyimpan log tersebut sebelum log tersebut akan otomatis terhapus. Selain itu kita bisa mengatus agar file log yang ada dirotasi berdasarkan satuan waktu (daily, weekly, monthly).</p>
-<p><code>Contoh :</code> log file yang dirotate setiap hari selama 7 hari.</p>
-<pre><code># ls /var/log
-syslog  syslog.1  syslog.2.gz  syslog.3.gz syslog.4.gz syslog.5.gz syslog.6.gz
+<h1 id="basic-bash-scripting-menggunakan-awk">Basic Bash Scripting Menggunakan AWK</h1>
+<h2 id="apa-itu-awk">Apa itu AWK</h2>
+<p>AWK atau GAWK (GNU awk) merupakan tools text processing yang sangat powerfull. Selain untuk text processing gawk juga dapat dimanfaatkan untuk mempermudah kita untuk melakukan automasi, config dan lain sebagainya.</p>
+<h2 id="bekerja-menggunakan-awk">Bekerja menggunakan AWK</h2>
+<p>Sebelum memulai menggunakan awk, adabaiknya kita membaca dokumentasinya terlebih dahulu. Untuk melihat dokumentasi atau man page dari awk menggunakan perintah sebagai berikut :</p>
+<pre><code>man awk
 </code></pre>
-<p>Log akan dirotate, kemudian di-compress dan setelah 7 hari maka log akan otomatis dihapus.</p>
-<h2 id="installasi">Installasi</h2>
-<p>Kebanyakan distribusi linux sudah terinstall logrotate secara default. Tapi jika di sistem linux kalian belum terinstall, logrotate bisa diinstall dengan perintah :</p>
-<p><strong>RHEL/CentOS</strong></p>
-<pre><code>sudo yum -y install logrotate
+<h2 id="contoh-penggunaan-awk">Contoh penggunaan awk</h2>
+<p>Ada 2 file yang digunakan untuk contoh
+a.txt</p>
+<pre><code>ID  Nama    Gender  Age     Hobby
+1   Udin    Male    22      Mancing
+2   Samsul  Male    13      Berenang
+3   Vina    Female  23      Memasak
+4   Sri     Female  15      Olahraga
 </code></pre>
-<p><strong>Debian/Ubuntu</strong></p>
-<pre><code>sudo apt -y install logrotate
+<p>b.csv</p>
+<pre><code>ID,Nama,Gender,Age,Hobby
+1,Udin,Male,22,Mancing
+2,Samsul,Male,13,Berenang
+3,Vina,Female,23,Memasak
+4,Sri,Female,15,Olahraga
 </code></pre>
-<p><strong>Fedora</strong></p>
-<pre><code>sudo dnf install logrotate
+<h3 id="versi-awk">Versi awk</h3>
+<p><code>Command :</code></p>
+<pre><code>awk --version
 </code></pre>
-<h2 id="konfigurasi">Konfigurasi</h2>
-<p>Contoh file konfigurasi logrotate untuk log <code>httpd access.log &amp; error.log</code>.</p>
-<pre><code>compress
+<p><code>Output :</code></p>
+<pre><code>GNU Awk 4.1.4, API: 1.1 (GNU MPFR 4.0.1, GNU MP 6.1.2)
+Copyright (C) 1989, 1991-2016 Free Software Foundation.
 
-&quot;/var/log/httpd/access.log&quot; /var/log/httpd/error.log {
-    rotate 5
-    mail recipient@example.org
-    size 100k
-    sharedscripts
-    postrotate
-        /usr/bin/killall -HUP httpd
-    endscript
-}
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see http://www.gnu.org/licenses/.
 </code></pre>
-<p><strong>Penjelasan</strong></p>
-<pre><code>compress
+<h3 id="ekstraksi-kolom">Ekstraksi kolom</h3>
+<p>Perintah berikut digunakan untuk melakukan ekstraksi kolom pertama dari file dengan delimiter default (whitespace/spasi/tab) <code>a.txt</code><br />
+<code>Command :</code></p>
+<pre><code>awk '{print $1}' a.txt
 </code></pre>
-<p>Baris pertama merupakan global options. Di contoh ini, log akan dicompress setelah log tersebut dirotasi.</p>
-<pre><code>&quot;/var/log/httpd/access.log&quot; /var/log/httpd/error.log
+<p><code>Output :</code></p>
+<pre><code>ID
+1
+2
+3
+4
 </code></pre>
-<p>Baris berikutnya mendefine parameter untuk log httpd <code>access.log</code> dan <code>error.log</code>.</p>
-<pre><code>rotate 5
+<p><strong>Penjelasan</strong> :<br />
+|<code>awk</code>|<code>'{print $1}'</code>|<code>a.txt</code>|
+|-|-|-|
+|awk command|print kolom pertama|nama file|</p>
+<p>Berikut contoh ekstrasi kolom menggunakan delimiter koma pada file <code>b.csv</code><br />
+<code>Command :</code></p>
+<pre><code>awk -F ',' '{print $2}' b.csv
 </code></pre>
-<p>Log akan dirotasi maksimal 5 kali, setelah itu log akan dihapus.</p>
-<pre><code>mail recipient@example.org
+<p><code>Output :</code></p>
+<pre><code>Nama
+Udin
+Samsul
+Vina
+Sri
 </code></pre>
-<p>Log yang melebihi 5 kali rotasi akan dikirim ke email <code>recipient@example.org</code>.</p>
-<pre><code>size 100k
+<p><strong>Penjelasan</strong> :<br />
+|<code>awk</code>|<code>-F</code>|<code>','</code>|<code>'{print $2}'</code>|<code>a.txt</code>|
+|-|-|-|-|-|
+|awk command|menentukan delimiter|delimiter|print kolom kedua|nama file|</p>
+<h3 id="ekstrak-construct">Ekstrak &amp; Construct</h3>
+<p>Seelah belajar cara melakukan ekstraksi kolom, kita juga dapat memodifikasi output yang kita inginkan, sebagai contoh :<br />
+<code>Command :</code></p>
+<pre><code>awk -F ',' '{print &quot;Hallo &quot;$2&quot; hobby saya &quot;$5}' b.csv
 </code></pre>
-<p>Log akan dirotasi setelah besar file 100k.</p>
-<pre><code>sharedscripts
-postrotate
-    /usr/bin/killall -HUP httpd
-endscript
+<p><code>Output :</code></p>
+<pre><code>Hallo Nama hobby saya Hobby
+Hallo Udin hobby saya Mancing
+Hallo Samsul hobby saya Berenang
+Hallo Vina hobby saya Memasak
+Hallo Sri hobby saya Olahraga
 </code></pre>
-<p><code>sharedscripts</code> berarti <code>postrotate</code> script akan dijalankan sekali setelah log lama di-compress.</p>
-<p>Untuk lebih detailnya kalian bisa cek manual page dari logrotate dengan perintah: <code>man logrotate</code></p>
+<p><strong>Penjelasan</strong> :<br />
+|<code>'{print</code>|<code>"Hallo "</code>|<code>$2</code>|<code>" hobby saya "</code>|<code>$5}'</code>|
+|-|-|-|-|-|
+|print|string tambahan|kolom ke-2|string tambahan|kolom ke-5|</p>
+<h3 id="mencari-string">Mencari string</h3>
+<p><code>Command :</code></p>
+<pre><code>awk '/Samsul/' a.txt
+</code></pre>
+<p><code>Output :</code></p>
+<pre><code>2   Samsul  Male    13      Berenang
+</code></pre>
+<p><strong>Penjelasan</strong><br />
+|<code>awk</code>|<code>'/Samsul/'</code>|<code>a.txt</code>|
+|-|-|-|
+|awk|String yang dicari|Nama file|</p>
+<h3 id="automasi-konfigurasi-hostame-dari-file-csv">Automasi Konfigurasi Hostame dari file csv</h3>
+<p>Task kali ini kita ditugaskan untuk setting hostname di beberapa server yang akan digunakan untuk deployment aplikasi, kita diberikan satu file <code>server.csv</code> yang berisi informasi server. Untuk format hostnamenya adalah sebagai berikut :  </p>
+<pre><code>Region-Type-Host
+ex : JKT-HPE-DL380-worker
+</code></pre>
+<p>File csv :  </p>
+<pre><code>IP,Type,Host,Region
+192.168.30.12,HPE-DL380,controller,JKT
+192.168.30.14,HPE-DL380,worker,JKT
+192.168.30.15,HPE-DL380,worker,BGR
+192.168.30.16,HPE-DL380,worker,BGD
+</code></pre>
+<p>Pertama kita coba generate hostname dan IP terlebih dahulu.<br />
+<code>Command :</code></p>
+<pre><code>awk -F ',' '{print $1&quot; &quot;$4&quot;-&quot;$2&quot;-&quot;$3}' server.csv
+</code></pre>
+<p><code>Output :</code></p>
+<pre><code>IP Region-Type-Host
+192.168.30.12 JKT-HPE-DL380-controller
+192.168.30.14 JKT-HPE-DL380-worker
+192.168.30.15 BGR-HPE-DL380-worker
+192.168.30.16 BGD-HPE-DL380-worker
+</code></pre>
+<p>Untuk konfigurasi <code>/etc/hosts</code> kita harus menghilangkan header <code>IP Region-Type-Host</code>. Kita bisa memanfaatkan fitur search string untuk mengeliminasi string tersebut.</p>
+<p><code>Command :</code></p>
+<pre><code>awk -F ',' '/192/{print $1&quot; &quot;$4&quot;-&quot;$2&quot;-&quot;$3}' server.csv
+</code></pre>
+<p><code>Output :</code></p>
+<pre><code>192.168.30.12 JKT-HPE-DL380-controller
+192.168.30.14 JKT-HPE-DL380-worker
+192.168.30.15 BGR-HPE-DL380-worker
+192.168.30.16 BGD-HPE-DL380-worker
+</code></pre>
+<p>Sekarang untuk menandakan konfigurasi ini digereate oleh awk kita dapat memanfaatkan statmen <code>BEGIN</code>.<br />
+<code>Command :</code></p>
+<pre><code>awk -F ',' 'BEGIN{print &quot;#Generated by awk&quot;}/192/{print $1&quot; &quot;$4&quot;-&quot;$2&quot;-&quot;$3}' server.csv
+</code></pre>
+<p><code>Output :</code></p>
+<pre><code>#Generated by awk
+192.168.30.12 JKT-HPE-DL380-controller
+192.168.30.14 JKT-HPE-DL380-worker
+192.168.30.15 BGR-HPE-DL380-worker
+192.168.30.16 BGD-HPE-DL380-worker
+</code></pre>
+<p>Sekarang kita aplikasikan konfigurasi tersebut ke file <code>/etc/hosts</code> ke server.
+Buat file hostname.sh</p>
+<pre><code>vim hostname.sh
+</code></pre>
+<p>Masukan script berikut untuk generate dan apply config ke server.</p>
+<pre><code>#!/bin/bash
+## Generate config
+FILE=server.csv
+awk -F ',' 'BEGIN{print &quot;#Generated by awk&quot;}/192/{print $1&quot; &quot;$4&quot;-&quot;$2&quot;-&quot;$3}' $FILE &gt; config
+
+## Apply config using ssh
+for i in $(awk -F ',' '/192/{print $1}' $FILE);
+  do 
+    echo &quot;Configuring $i&quot;;
+    echo &quot;cat config | ssh root@$i 'cat &gt;&gt; /etc/hosts'&quot;;
+done
+</code></pre>
+<p>Ubah permission untuk eksekusi</p>
+<pre><code>chmod 760 hostname.sh
+</code></pre>
+<p>Eksekusi script</p>
+<pre><code>./hostname.sh
+</code></pre>
+<p><code>Output :</code></p>
+<pre><code>Configuring 192.168.30.12
+Configuring 192.168.30.14
+Configuring 192.168.30.15
+Configuring 192.168.30.16
+</code></pre>
+<h3 id="optimasi-script">Optimasi script</h3>
+<ol>
+<li>Ubah variable <code>$FILE</code> menjadi argument agar eksekusi script menjadi <code>./hostname.sh nama-file.csv</code></li>
+</ol>
 
               
             </article>
@@ -532,7 +734,7 @@ endscript
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+        <a href="../logrotate/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Logrotate" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -541,20 +743,20 @@ endscript
               <span class="md-footer__direction">
                 Previous
               </span>
-              Home
+              Logrotate
             </div>
           </div>
         </a>
       
       
         
-        <a href="../awk/" class="md-footer__link md-footer__link--next" aria-label="Next: Basic Bash Scripting - AWK" rel="next">
+        <a href="../../containers/containers-sec/insecure-docker-registry/" class="md-footer__link md-footer__link--next" aria-label="Next: Insecure Docker Registry" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Basic Bash Scripting - AWK
+              Insecure Docker Registry
             </div>
           </div>
           <div class="md-footer__button md-icon">

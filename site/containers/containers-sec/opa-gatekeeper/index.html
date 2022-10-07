@@ -8,19 +8,19 @@
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
     
     
       
-        <title>Logrotate - Road to DevSecOps</title>
+        <title>Opa gatekeeper - Road to DevSecOps</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c5ef100.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9647289d.min.css">
         
       
     
@@ -35,7 +35,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#manajemen-log-menggunakan-logrotate" class="md-skip">
+        <a href="#opa-gatekeeper" class="md-skip">
           Skip to content
         </a>
       
@@ -73,7 +73,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Road to DevSecOps" class="md-header__button md-logo" aria-label="Road to DevSecOps" data-md-component="logo">
+    <a href="../../.." title="Road to DevSecOps" class="md-header__button md-logo" aria-label="Road to DevSecOps" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Logrotate
+              Opa gatekeeper
             
           </span>
         </div>
@@ -159,7 +159,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Road to DevSecOps" class="md-nav__button md-logo" aria-label="Road to DevSecOps" data-md-component="logo">
+    <a href="../../.." title="Road to DevSecOps" class="md-nav__button md-logo" aria-label="Road to DevSecOps" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -178,7 +178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -191,14 +191,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -219,73 +217,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Logrotate
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../linux-fun/logrotate/" class="md-nav__link">
         Logrotate
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#apa-itu-logrotate" class="md-nav__link">
-    Apa itu logrotate?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bagaimana-logrotate-bekerja" class="md-nav__link">
-    Bagaimana Logrotate Bekerja?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installasi" class="md-nav__link">
-    Installasi
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#konfigurasi" class="md-nav__link">
-    Konfigurasi
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -297,7 +233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../awk/" class="md-nav__link">
+      <a href="../../../linux-fun/awk/" class="md-nav__link">
         Basic Bash Scripting - AWK
       </a>
     </li>
@@ -371,7 +307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/containers-sec/insecure-docker-registry/" class="md-nav__link">
+      <a href="../insecure-docker-registry/" class="md-nav__link">
         Insecure Docker Registry
       </a>
     </li>
@@ -409,8 +345,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -419,30 +353,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#apa-itu-logrotate" class="md-nav__link">
-    Apa itu logrotate?
+  <a href="#opa-gatekeeper" class="md-nav__link">
+    OPA Gatekeeper
+  </a>
+  
+    <nav class="md-nav" aria-label="OPA Gatekeeper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constraint" class="md-nav__link">
+    Constraint
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#bagaimana-logrotate-bekerja" class="md-nav__link">
-    Bagaimana Logrotate Bekerja?
+        
+          <li class="md-nav__item">
+  <a href="#constraint-template" class="md-nav__link">
+    Constraint Template
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#installasi" class="md-nav__link">
-    Installasi
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#konfigurasi" class="md-nav__link">
-    Konfigurasi
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -460,65 +393,169 @@
                 
 
 
-<h1 id="manajemen-log-menggunakan-logrotate">Manajemen Log Menggunakan Logrotate</h1>
-<p><img alt="" src="../images/log.png" /></p>
-<h2 id="apa-itu-logrotate">Apa itu logrotate?</h2>
-<p>Menurut manual page dari logrotate <code>man logrotate</code>, Logrotate adalah sebuah program yang berfungsi untuk mengotomatissai proses rotasi, kompresi, dan penghapusan log file. Logrotate menghandle (rotate, compress, delete) file log secara satuan waktu (daily, weekly, monthly), atau ukuran besar log. </p>
-<h2 id="bagaimana-logrotate-bekerja">Bagaimana Logrotate Bekerja?</h2>
-<p>Logrotate bekerja dengan memanfaatkan file konfigurasi yang bisa kita kustomisasi <code>/etc/logrotate.conf</code>. Dalam file konfigurasi kita bisa mengatur berapa lama kita menyimpan log tersebut sebelum log tersebut akan otomatis terhapus. Selain itu kita bisa mengatus agar file log yang ada dirotasi berdasarkan satuan waktu (daily, weekly, monthly).</p>
-<p><code>Contoh :</code> log file yang dirotate setiap hari selama 7 hari.</p>
-<pre><code># ls /var/log
-syslog  syslog.1  syslog.2.gz  syslog.3.gz syslog.4.gz syslog.5.gz syslog.6.gz
-</code></pre>
-<p>Log akan dirotate, kemudian di-compress dan setelah 7 hari maka log akan otomatis dihapus.</p>
-<h2 id="installasi">Installasi</h2>
-<p>Kebanyakan distribusi linux sudah terinstall logrotate secara default. Tapi jika di sistem linux kalian belum terinstall, logrotate bisa diinstall dengan perintah :</p>
-<p><strong>RHEL/CentOS</strong></p>
-<pre><code>sudo yum -y install logrotate
-</code></pre>
-<p><strong>Debian/Ubuntu</strong></p>
-<pre><code>sudo apt -y install logrotate
-</code></pre>
-<p><strong>Fedora</strong></p>
-<pre><code>sudo dnf install logrotate
-</code></pre>
-<h2 id="konfigurasi">Konfigurasi</h2>
-<p>Contoh file konfigurasi logrotate untuk log <code>httpd access.log &amp; error.log</code>.</p>
-<pre><code>compress
+  <h1>Opa gatekeeper</h1>
 
-&quot;/var/log/httpd/access.log&quot; /var/log/httpd/error.log {
-    rotate 5
-    mail recipient@example.org
-    size 100k
-    sharedscripts
-    postrotate
-        /usr/bin/killall -HUP httpd
-    endscript
-}
+<h2 id="opa-gatekeeper">OPA Gatekeeper</h2>
+<ul>
+<li>admission controllers</li>
+<li>require spesific labels on all resources</li>
+<li>require container image come from the coorporate image registry</li>
+<li>require all pods specify resource request and limits</li>
+<li>prevent conflicting ingress object from being created</li>
+</ul>
+<p><img alt="" src="../images/kubernetes-admission-flow.png" /></p>
+<p>Install gatekeeper</p>
+<pre><code>kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.4/deploy/gatekeeper.yaml
 </code></pre>
-<p><strong>Penjelasan</strong></p>
-<pre><code>compress
+<p><strong>Gatekeeper</strong> menggunakan <code>OPA Constraint framework</code> untuk mendefinisikan policy.</p>
+<h3 id="constraint">Constraint</h3>
+<p>Constraint merupakan suatu difinisi agar suatu sistem memenuhi requirement dari author.</p>
+<p>ex.</p>
+<pre><code>apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: FooSystemRequiredLabel
+metadata:
+  name: require-billing-label
+spec:
+  match:
+    namespace: [&quot;expensive&quot;]
+  parameters:
+    labels: [&quot;billing&quot;]
 </code></pre>
-<p>Baris pertama merupakan global options. Di contoh ini, log akan dicompress setelah log tersebut dirotasi.</p>
-<pre><code>&quot;/var/log/httpd/access.log&quot; /var/log/httpd/error.log
+<p>ketika constraint tersebut dideklarasikan, maka setiap resources yang ada pada namespace <code>expensive</code> diharuskan mempunyai label <code>billing</code>.</p>
+<h3 id="constraint-template">Constraint Template</h3>
+<p>Constraint template merupakan template yang nantinya digunakan oleh <code>constraint</code> untuk mendefinisikan policy.</p>
+<p>ex.</p>
+<pre><code>apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8srequiredlabels
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sRequiredLabels
+      validation:
+        # Schema for the `parameters` field
+        openAPIV3Schema:
+          properties:
+            labels:
+              type: array
+              items: string
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8srequiredlabels
+
+        violation[{&quot;msg&quot;: msg, &quot;details&quot;: {&quot;missing_labels&quot;: missing}}] {
+          provided := {label | input.review.object.metadata.labels[label]}
+          required := {label | label := input.parameters.labels[_]}
+          missing := required - provided
+          count(missing) &gt; 0
+          msg := sprintf(&quot;you must provide labels: %v&quot;, [missing])
+        }
 </code></pre>
-<p>Baris berikutnya mendefine parameter untuk log httpd <code>access.log</code> dan <code>error.log</code>.</p>
-<pre><code>rotate 5
+<p><code>Constraint template</code> diatas merupakan definisi template yang digunakan oleh <code>constraint</code> sebelumnya, yang mengharuskan resource yang ada di suatu namespace mempunyai spesifik label.</p>
+<p>Demo :
+1. Create ConstraintTemplate.</p>
+<pre><code>vim ct-req-labels.yaml
+...
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8srequiredlabels
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sRequiredLabels
+      validation:
+        # Schema for the `parameters` field
+        openAPIV3Schema:
+          properties:
+            labels:
+              type: array
+              items: string
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8srequiredlabels
+
+        violation[{&quot;msg&quot;: msg, &quot;details&quot;: {&quot;missing_labels&quot;: missing}}] {
+          provided := {label | input.review.object.metadata.labels[label]}
+          required := {label | label := input.parameters.labels[_]}
+          missing := required - provided
+          count(missing) &gt; 0
+          msg := sprintf(&quot;you must provide labels: %v&quot;, [missing])
+        }
+...
 </code></pre>
-<p>Log akan dirotasi maksimal 5 kali, setelah itu log akan dihapus.</p>
-<pre><code>mail recipient@example.org
+<p>Apply definition</p>
+<pre><code>kubectl apply -f ct-req-labels.yaml
 </code></pre>
-<p>Log yang melebihi 5 kali rotasi akan dikirim ke email <code>recipient@example.org</code>.</p>
-<pre><code>size 100k
+<ol>
+<li>Create Constraint.</li>
+</ol>
+<pre><code>vim c-req-label.yaml
+...
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredLabels
+metadata:
+  name: ns-must-have-gk
+spec:
+  match:
+    kinds:
+      - apiGroups: [&quot;&quot;]
+        kinds: [&quot;Namespace&quot;]
+  parameters:
+    labels: [&quot;name: gatekeeper&quot;]
+...
 </code></pre>
-<p>Log akan dirotasi setelah besar file 100k.</p>
-<pre><code>sharedscripts
-postrotate
-    /usr/bin/killall -HUP httpd
-endscript
+<p>Apply definition</p>
+<pre><code>kubectl apply -f c-req-label.yaml
 </code></pre>
-<p><code>sharedscripts</code> berarti <code>postrotate</code> script akan dijalankan sekali setelah log lama di-compress.</p>
-<p>Untuk lebih detailnya kalian bisa cek manual page dari logrotate dengan perintah: <code>man logrotate</code></p>
+<p>Constraint diatas akan membatasi pada saat kita membuat namespace. namespace yang dibuat harus mempunyai label <code>gatekeeper</code></p>
+<pre><code># kubectl create ns ci-cd
+...
+Error from server ([ns-must-have-gk] you must provide labels: {&quot;gatekeeper&quot;}): admission webhook &quot;validation.gatekeeper.sh&quot; denied the request: [ns-must-have-gk] you must provide labels: {&quot;gatekeeper&quot;}
+...
+</code></pre>
+<pre><code>apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: privilegedcontainer
+spec:
+  crd:
+    spec:
+      names:
+        kind: PrivilegedContainer
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package privilegedcontainer
+
+        violation[{&quot;msg&quot;: msg, &quot;details&quot;: {}}]{
+            c := input_containers[_]
+            c.securityContext.privileged
+            msg := sprintf(&quot;Privileged container is not allowed: %v, securityContext: %v, [c.name, c.securityContext]&quot;)
+        }
+        input_containers[c]{
+            c := input.review.object.spec.containers[_]
+        }
+        input_containers[c]{
+            c := input.review.object.spec.initContainers[_]
+        }
+</code></pre>
+<pre><code>apiVersion: constraint.gatekeeper.sh/v1beta1
+kind: PrivilegedContainer
+metadata:
+  name: privilegedcontainer
+spec:
+  match:
+    kinds:
+      - apiGroups: [&quot;&quot;]
+        apiVersion: [&quot;v1&quot;]
+        kinds: [&quot;Pod&quot;]
+</code></pre>
 
               
             </article>
@@ -528,41 +565,6 @@ endscript
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Home
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../awk/" class="md-footer__link md-footer__link--next" aria-label="Next: Basic Bash Scripting - AWK" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Basic Bash Scripting - AWK
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -584,10 +586,10 @@ endscript
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.748e2769.min.js"></script>
       
     
   </body>
