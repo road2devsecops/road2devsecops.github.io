@@ -8,8 +8,8 @@ Banyak sekali perusahaan memanfaatkan registry secara public untuk mempermudah p
 
 ## Environment Lab
 
-docker registry : 192.111.246.3  
-attacker : 192.111.246.2
+- docker registry : 192.111.246.3  
+- attacker : 192.111.246.2
 
 ## Gather Information
 

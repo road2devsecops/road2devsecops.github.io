@@ -6,6 +6,7 @@ nav:
   - Home: index.md
   - Linux is Fun:
       - Logrotate: linux-fun/logrotate.md
+      - Basic Bash Scripting - AWK: linux-fun/awk.md
   - Containers:
       - Containers Security:
           - Insecure Docker Registry: containers/containers-sec/insecure-docker-registry.md
